@@ -31,7 +31,8 @@ public class JDBCTrainingDAO implements TrainingDAO {
     @Override
     public void insert(Sport sport) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO wzorce.sports (id ,name) VALUES (NULL , ?)");
+            PreparedStatement preparedStatement = connection.prepareStatement
+                    ("INSERT INTO wzorce.sports (id ,name) VALUES (NULL , ?)");
             preparedStatement.setString(1,  sport.getName());
             preparedStatement.executeUpdate();
             preparedStatement.close();
